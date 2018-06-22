@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Tech News</string>
+    <string name="article_name">Long placeholder location that should wrap to more than 2 lines of text</string>
+    <string name="author_name">Authors Name</string>
+    <string name="date">Date</string>
+</resources>
