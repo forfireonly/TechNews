@@ -158,7 +158,7 @@ public class QueryUtils {
             // For each news in the newsArray, create an {@link News} object
             for (int i = 0; i < currentNewsArray.length(); i++) {
                 JSONObject currentNews = currentNewsArray.getJSONObject(i);
-                
+
                 // Extract the value for the key called "webTitle"
                 String titleandauthor = currentNews.getString("webTitle");
 

@@ -3,4 +3,9 @@
     <string name="article_name">Long placeholder location that should wrap to more than 2 lines of text</string>
     <string name="author_name">Authors Name</string>
     <string name="date">Date</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="please_try_again_latter">Please, try again latter</string>
+    <string name="please_try">Please, Try</string>
+    <string name="turning_off_airplane_mode">Turning off airplane mode</string>
+    <string name="checking_signal_in_your_area">checking signal in your area</string>
 </resources>

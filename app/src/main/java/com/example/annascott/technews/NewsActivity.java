@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -30,16 +31,21 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
 
     private TextView mEmptyStateTextView;
 
+    RelativeLayout emptyRelativeLayout;
+    RelativeLayout noInternetConnection;
+
+    ListView newsListView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
 
         // Find a reference to the {@link ListView} in the layout
-        ListView newsListView = (ListView) findViewById(R.id.list);
+        newsListView = (ListView) findViewById(R.id.list);
 
-        mEmptyStateTextView = (TextView) findViewById(R.id.empty_view);
-        newsListView.setEmptyView(mEmptyStateTextView);
+        emptyRelativeLayout =(RelativeLayout) findViewById(R.id.no_news);
+        noInternetConnection =(RelativeLayout) findViewById(R.id.no_internet);
 
         // Create a new adapter that takes an empty list of news as input
         mAdapter = new NewsAdapter(this, new ArrayList<News>());
@@ -59,17 +65,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
                 startActivity(websiteIntent);
             }
         });
-
-
-        // Get a reference to the ConnectivityManager to check state of network connectivity
-        ConnectivityManager connMgr = (ConnectivityManager)
-                getSystemService(Context.CONNECTIVITY_SERVICE);
-
-        // Get details on the currently active default data network
-        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-
-        // If there is a network connection, fetch data
-        if (networkInfo != null && networkInfo.isConnected()) {
+        if (isNetworkConnectionAvailable() == true) {
             // Get a reference to the LoaderManager, in order to interact with loaders.
             LoaderManager loaderManager = getLoaderManager();
 
@@ -83,11 +79,9 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
             View loadingIndicator = findViewById(R.id.loading_spinner);
             loadingIndicator.setVisibility(View.GONE);
 
-            // Update empty state with no connection error message
-            mEmptyStateTextView.setText("No Internet Connection");
+            newsListView.setEmptyView(noInternetConnection);
         }
     }
-
 
     @Override
     public Loader<List<News>> onCreateLoader(int i, Bundle bundle) {
@@ -102,17 +96,26 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
         View loadingIndicator = findViewById(R.id.loading_spinner);
         loadingIndicator.setVisibility(View.GONE);
 
-        mEmptyStateTextView.setText("No News at the moment");
-        // Clear the adapter of previous earthquake data
+        if (isNetworkConnectionAvailable() == false){
+            newsListView.setEmptyView(noInternetConnection);
+        }
+        else{
+            newsListView.setEmptyView(emptyRelativeLayout);}
+
+        // Clear the adapter of previous data
         mAdapter.clear();
 
         // If there is a valid list of {@link News}s, then add them to the adapter's
         // data set. This will trigger the ListView to update.
+        if (isNetworkConnectionAvailable() == true){
+            noInternetConnection.setVisibility(View.INVISIBLE);
         if (collectionNews != null && !collectionNews.isEmpty()) {
+            noInternetConnection.setVisibility(View.INVISIBLE);
+        }
+            noInternetConnection.setVisibility(View.INVISIBLE);
             mAdapter.addAll(collectionNews);
             Log.v("Loader finished", "yes");
         }
-
     }
     @Override
     public void onLoaderReset(Loader<List<News>> loader) {
@@ -121,4 +124,20 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
         Log.v("Loader reset", "yes");
     }
 
-}
+    public boolean isNetworkConnectionAvailable(){
+        ConnectivityManager cm =
+                (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        boolean isConnected = activeNetwork != null &&
+                activeNetwork.isConnected();
+        if(isConnected) {
+            Log.d("Network", "Connected");
+            return true;
+        }
+        else{
+            //checkNetworkConnection();
+            Log.d("Network","Not Connected");
+            return false;
+        }
+}}
