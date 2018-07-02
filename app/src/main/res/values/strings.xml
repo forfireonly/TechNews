@@ -4,8 +4,29 @@
     <string name="author_name">Authors Name</string>
     <string name="date">Date</string>
     <string name="no_internet_connection">No internet connection</string>
-    <string name="please_try_again_latter">Please, try again latter</string>
+    <string name="please_try_again_latter">Please, check your the format of your date and try again latter</string>
     <string name="please_try">Please, Try</string>
     <string name="turning_off_airplane_mode">Turning off airplane mode</string>
     <string name="checking_signal_in_your_area">checking signal in your area</string>
+
+    <string name="settings_menu_item">Settings</string>
+    <string name="settings_title">Settings</string>
+
+    <string name="settings_date_cutoff_label">From Date</string>
+    <string name="settings_date_cutoff_key" translatable="false">from-date</string>
+    <string name="settings_date_cutoff_default" translatable="false">2000-01-01</string>
+
+    <!-- Strings For Order-By Preference [CHAR LIMIT=30] -->
+    <string name="settings_order_by_label">Order By</string>
+    <string name="settings_order_by_key" translatable="false">order-by</string>
+    <string name="settings_order_by_default" translatable="false">@string/settings_order_by_date_value</string>
+
+    <!-- Label for order-by magnitude option [CHAR LIMIT=20] -->
+    <string name="settings_order_by_date_label">Date</string>
+    <string name="settings_order_by_date_value" translatable="false">newest</string>
+
+    <!-- Label for order-by most recent option [CHAR LIMIT=20] -->
+    <string name="settings_order_by_most_relevant_label">Relevance</string>
+    <string name="settings_order_by_most_relevant_value" translatable="false">relevance</string>
+
 </resources>

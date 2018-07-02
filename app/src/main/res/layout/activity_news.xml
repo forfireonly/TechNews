@@ -45,6 +45,7 @@
         android:id="@+id/no_news"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#FFFFFF"
         android:visibility="invisible"
         >
 
@@ -59,10 +60,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/no_news_image"
-            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
             android:text="@string/please_try_again_latter"
             android:textColor="@color/black"
-            android:textSize="@dimen/_32sp" />
+            android:textSize="@dimen/_24sp" />
 
     </RelativeLayout>
 
