@@ -28,7 +28,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
     private static final String LOG_TAG = NewsActivity.class.getName();
 
     /** URL for news data from Guardian dataset */
-    private static final String Guard_REQUEST_URL ="https://content.guardianapis.com/search?q=computers&order-by=relevance&api-key=f3a1cedd-032a-45ab-b1d4-d7ba62274a9c";
+    private static final String Guard_REQUEST_URL ="https://content.guardianapis.com/search?q=%22tech%20news%22&order-by=relevance&api-key=f3a1cedd-032a-45ab-b1d4-d7ba62274a9c";
             //"https://content.guardianapis.com/search?q=technologys&from-date=2014-01-01&api-key=test";
            // "https://content.guardianapis.com/search?q=%22tech%20news%22&api-key=f3a1cedd-032a-45ab-b1d4-d7ba62274a9c";
     private NewsAdapter mAdapter;
