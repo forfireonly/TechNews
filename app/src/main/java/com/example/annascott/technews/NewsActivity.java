@@ -33,9 +33,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
            // "https://content.guardianapis.com/search?q=%22tech%20news%22&api-key=f3a1cedd-032a-45ab-b1d4-d7ba62274a9c";
     private NewsAdapter mAdapter;
     private static final int NEWS_LOADER_ID = 1;
-
-    private TextView mEmptyStateTextView;
-
+    
     RelativeLayout emptyRelativeLayout;
     RelativeLayout noInternetConnection;
 
