@@ -24,3 +24,7 @@ and order of stories depending on relevance or date.
 
 If user enters the date in a wrong format, he is prompted to check his date.
 ![wrongformatgif](https://user-images.githubusercontent.com/29640816/42190651-8514a736-7e1b-11e8-841c-a68d6e2f9778.gif)
+
+App queries the content.guardianapis.com API to fetch news stories related to the topic chosen by the user.
+![topicgif](https://user-images.githubusercontent.com/29640816/42237495-292fd3fa-7ebb-11e8-91da-04f2fe544bf5.gif)
+![topic2gif](https://user-images.githubusercontent.com/29640816/42237522-415156a2-7ebb-11e8-899b-de8849df79b8.gif)
