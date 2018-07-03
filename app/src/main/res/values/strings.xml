@@ -21,12 +21,41 @@
     <string name="settings_order_by_key" translatable="false">order-by</string>
     <string name="settings_order_by_default" translatable="false">@string/settings_order_by_date_value</string>
 
-    <!-- Label for order-by magnitude option [CHAR LIMIT=20] -->
     <string name="settings_order_by_date_label">Date</string>
     <string name="settings_order_by_date_value" translatable="false">newest</string>
 
     <!-- Label for order-by most recent option [CHAR LIMIT=20] -->
     <string name="settings_order_by_most_relevant_label">Relevance</string>
     <string name="settings_order_by_most_relevant_value" translatable="false">relevance</string>
+
+
+
+    <!-- Strings For Order-By Preference [CHAR LIMIT=30] -->
+    <string name="settings_order_by_title">Subject</string>
+    <string name="settings_order_by_handle" translatable="false">q</string>
+    <string name="settings_order_bydefault" translatable="false">@string/settings_order_by_software_value</string>
+
+    <string name="settings_order_by_software_label">Software</string>
+    <string name="settings_order_by_software_value" translatable="false">software</string>
+
+    <string name="settings_order_by_hardware_label">Hardware</string>
+    <string name="settings_order_by_hardware_value" translatable="false">hardware</string>
+
+
+    <!-- Label for order-by most recent option [CHAR LIMIT=20] -->
+    <string name="settings_order_by_database_label">Database</string>
+    <string name="settings_order_by_datebase_value" translatable="false">database</string>
+
+    <string name="settings_order_by_virtual_reality_label">Virtual reality</string>
+    <string name="settings_order_by_virtual_reality_value" translatable="false">virtual reality</string>
+
+    <string name="settings_order_by_artificial_inteligence_label">Artificial inteligence</string>
+    <string name="settings_order_by_artificial_inteligence_value" translatable="false">artificial inteligence</string>
+
+    <string name="settings_order_by_cybersecurity_label">Cybersecurity</string>
+    <string name="settings_order_by_cybersecurity_value" translatable="false">cybersecurity</string>
+
+
+
 
 </resources>

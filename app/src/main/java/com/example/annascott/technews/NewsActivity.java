@@ -28,9 +28,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
     private static final String LOG_TAG = NewsActivity.class.getName();
 
     /** URL for news data from Guardian dataset */
-    private static final String Guard_REQUEST_URL ="https://content.guardianapis.com/search?q=%22tech%20news%22&order-by=relevance&api-key=f3a1cedd-032a-45ab-b1d4-d7ba62274a9c";
-            //"https://content.guardianapis.com/search?q=technologys&from-date=2014-01-01&api-key=test";
-           // "https://content.guardianapis.com/search?q=%22tech%20news%22&api-key=f3a1cedd-032a-45ab-b1d4-d7ba62274a9c";
+    private static final String Guard_REQUEST_URL ="https://content.guardianapis.com/search?q=artificial inteligencer&order-by=relevance&api-key=f3a1cedd-032a-45ab-b1d4-d7ba62274a9c";
     private NewsAdapter mAdapter;
     private static final int NEWS_LOADER_ID = 1;
     
@@ -96,16 +94,23 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
                 getString(R.string.settings_date_cutoff_key),
                 getString(R.string.settings_date_cutoff_default));
 
-        String orderBy = sharedPrefs.getString(
-                                getString(R.string.settings_order_by_key),
-                                getString(R.string.settings_order_by_default)
+        String subject = sharedPrefs.getString(
+                                getString(R.string.settings_order_by_handle),
+                                getString(R.string.settings_order_bydefault)
                                 );
+
+        String orderBy  = sharedPrefs.getString(
+                getString(R.string.settings_order_by_key),
+                getString(R.string.settings_order_by_default)
+        );
 
             // parse breaks apart the URI string that's passed into its parameter
             Uri baseUri = Uri.parse(Guard_REQUEST_URL);
 
             // buildUpon prepares the baseUri that we just parsed so we can add query parameters to it
             Uri.Builder uriBuilder = baseUri.buildUpon();
+
+            uriBuilder.appendQueryParameter("q", subject);
 
             uriBuilder.appendQueryParameter("from-date", startDate);
            // uriBuilder.appendQueryParameter("orderby", "time");

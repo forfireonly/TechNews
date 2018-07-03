@@ -27,6 +27,9 @@ public class SettingsActivity extends AppCompatActivity {
 
             Preference orderBy = findPreference(getString(R.string.settings_order_by_key));
             bindPreferenceSummaryToValue(orderBy);
+
+            Preference subject = findPreference(getString(R.string.settings_order_by_handle));
+            bindPreferenceSummaryToValue(subject);
         }
 
         private void bindPreferenceSummaryToValue(Preference preference) {

@@ -18,4 +18,13 @@
         android:key="@string/settings_order_by_key"
         android:title="@string/settings_order_by_label" />
 
+    <ListPreference
+        android:defaultValue="@string/settings_order_bydefault"
+        android:entries="@array/settings_order_by_titles"
+        android:entryValues="@array/settings_order_by_topic"
+        android:key="@string/settings_order_by_handle"
+        android:title="@string/settings_order_by_title" />
+
+
+
 </PreferenceScreen>
