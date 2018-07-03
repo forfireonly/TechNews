@@ -20,7 +20,7 @@ stories displayed in from the feed. The available preference options presented t
 and order of stories depending on relevance or date.
 
 ![rightformatgif](https://user-images.githubusercontent.com/29640816/42190596-38696426-7e1b-11e8-809d-62d0cd6d87f2.gif)
-![preferencegif](https://user-images.githubusercontent.com/29640816/42190598-3ba33ad6-7e1b-11e8-9ff3-add9c85af910.gif)
+![relevancegif](https://user-images.githubusercontent.com/29640816/42199006-ffb103c2-7e48-11e8-9be2-f017826610e1.gif)
 
 If user enters the date in a wrong format, he is prompted to check his date.
 ![wrongformatgif](https://user-images.githubusercontent.com/29640816/42190651-8514a736-7e1b-11e8-841c-a68d6e2f9778.gif)
